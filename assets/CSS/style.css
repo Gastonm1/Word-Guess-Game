@@ -1,0 +1,25 @@
+body {
+    background-image: url(https://i.redd.it/lbwyseo6m7sz.png)
+}
+
+.container{
+    margin: 300px;
+}
+
+header {
+ border: 5px double whitesmoke;
+ height: 150px;
+ width: 600px;
+ margin: 0 auto;
+ text-align: center;
+ font-size: 30px;
+ background-color: rgba(169, 169, 169, 0.664)
+}
+
+h1{
+    color: whitesmoke;
+}
+
+h3{
+    color: whitesmoke;
+}
