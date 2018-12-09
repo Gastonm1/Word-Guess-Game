@@ -1,37 +1,33 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <title>Marvel HangMan</title>
-    <!--Reset-->
-    <link rel="stylesheet" href="assets/CSS/reset.css">
-    <!--CSS-->
-    <link rel="stylesheet" href="assets/CSS/style.css">
-</head>
-
-<body>
-    <div class="container">
-        <header>
-            <h1>HangMan Game</h1>
+    <head>
+        <title>Marvel HangMan</title>
+        <!--Reset-->
+        <link rel="stylesheet" href="assets/CSS/reset.css">
+        <!--CSS-->
+        <link rel="stylesheet" href="assets/CSS/style.css">
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>HangMan Game</h1>
+                <br>
+                <h3> Category: Marvel Movies</h3>
+            </header>
             <br>
-            <h3> Category: Marvel Movies</h3>
-        </header>
-<br>
-    <div class="Underscore"> _ _ _ _ _ _</div>
-<br>
-    <div class="ContentContainer">
+            <div class="Underscore"> "_"</div>
+            <br>
+            <div class="ContentContainer">
             <div id="content-left">
                 <h2>Number of Guesses Remaining</h2>
             </div>
             <div class="content-right">
                 <h2>Letters Used</h2>
             </div>
-    </div>
-<audio src="Avengers_Suite_Theme.mp3" autoplay></audio>
-
-
-<script src="assets/JavaScript/Game.js"></script>
-
-
-</body>
+        </div>
+        <audio controls auotoplay>
+            <source src="Avengers_Suite_Theme.mp3" type= "audio/mpeg">
+        </audio>
+        <script src="assets/JavaScript/Game.js"></script>
+    </body>
 </html>
