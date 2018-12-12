@@ -3,7 +3,7 @@ body {
 }
 
 .container{
-    margin: 300px;
+    margin: 100px;
 }
 /* Header */
 
@@ -33,7 +33,7 @@ header {
 
 .Underscore {
     border: 5px double whitesmoke;
-    height: 150px;
+    height: 250px;
     width: 600px;
     margin: 0 auto;
     text-align: center;
