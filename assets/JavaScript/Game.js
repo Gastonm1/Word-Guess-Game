@@ -1,74 +1,80 @@
-var GuessesLeft = 10;
+var guessesLeft = 10;
 var winCounter = 0;
+var userGuess = '';
+var underscore = [];
 
-document.getElementById("RemainingGuesses").innerHTML= "You have " + GuessesLeft + " guesses left!";
+document.getElementById("RemainingGuesses").innerHTML= "You have " + guessesLeft + " guesses left!";
 document.getElementById("Wins").innerHTML= "You have won " + winCounter + " games!";
 
+//Rules & Formatting
+//===============================================================================================================
+function startGame() {
 // Create an array of words
-var MarvelMovies = ['hulk', 'thor', 'avengers', 'antman', 'spiderman'];
+var marvelMovies = ['hulk', 'thor', 'avengers', 'antman', 'spiderman'];
 // Choose Movie randomly
-var randMovie = MarvelMovies[Math.floor(Math.random() * MarvelMovies.length)];
+var randMovie = marvelMovies[Math.floor(Math.random() * marvelMovies.length)];
+
 console.log(randMovie);
-//Display chosen movie on page
-var generateUnderscore = () => {
-    for (var i = 0; i < randMovie.length; i++) {
+
+//Create underscores based on length of Movie
+
+    for (var i = 0; i < randMovie.length; i++) { // Create underscores for the length of the random Movie 
+        underscore.push(' _ ');
     }
-    document.querySelector(".Underscore").innerHTML = randMovie;
-}
-generateUnderscore();
 
-//Create underscores based on length of word
-var underscore = [];
-for (var i = 0; i < randMovie.length; i++) {
-    underscore = underscore + " _ ";
+//Display underscores on browser here
+document.getElementById('Underscore').innerHTML = underscore.join(' ');
+console.log(underscore)
 
-}
-
-document.querySelector(".Underscore").innerHTML = underscore;
-console.log(underscore);
-
+//Alerts
 function winLose() {
-    if (UserGuess === randMovie.length) {
+    if (winCounter === randMovie.length) {
         alert('You made Stan Lee proud!')
 
     }
-    else if (GuessesLeft === 0) {
+    else if (guessesLeft === 0) {
         alert('Stan Lee is not satisfied!');
     }
 }
 
-var UserGuess = '';
-var WrongLetter = [];
-
+//Game for user starts below
+//=========================================================================================
 //Obtain user guess
 document.addEventListener("keydown", function (event) {
-    UserGuess = event.key;
+    userGuess = event.key;
     console.log(event.key);
 
-    //Check if letter exists inside of word, if so fill in the blank, if not subtract on GuessLeft
 
-    if (randMovie.indexOf(UserGuess) > -1) { // If the user guessed a correct letter
+//Check if letter exists inside of word, if so fill in the blank, if not subtract on GuessLeft
+// If User guess is right
+//If user guess is wrong
+
+    var rightLetter = [];
+    var wrongLetter = [];
+
+    if (randMovie.indexOf(userGuess) > -1) { // If the user guessed a correct letter
         for (var i = 0; i < randMovie.length; i++) { // For every letter in randMovie
-            if (randMovie.charAt(i) === UserGuess) { // If the user guessed one of the letters
-                underscore[i] = UserGuess
+            if (randMovie.charAt(i) === userGuess) { // If the user guessed one of the letters
+                underscore[i] = userGuess
                 console.log(underscore);
-
+                rightLetter.push(underscore[i]);
                 winCounter++;
                 winLose();
-
             }
         }
     } else { // if the user guesses a wrong letter
-        WrongLetter.push(UserGuess);
-        GuessesLeft--;
-        console.log(GuessesLeft)
+        wrongLetter.push(userGuess);
+        guessesLeft--;
+        console.log(guessesLeft)
         winLose();
     }
-    document.querySelector('#RemainingGuesses').innerHTML = GuessesLeft
-    document.querySelector('.Underscore').innerHTML = underscore
-    document.querySelector('#Wins').innerHTML = winCounter
-})
 
+    document.getElementById("RemainingGuesses").innerHTML = guessesLeft;
+    document.getElementById("Wins").innerHTML = winCounter;
+})
+}
+
+startGame();
 
 
 // Todo:
