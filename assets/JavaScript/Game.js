@@ -68,7 +68,7 @@ document.addEventListener("keydown", function (event) {
         console.log(guessesLeft)
         winLose();
     }
-
+    document.getElementById("Underscore").innerHTML = userGuess;
     document.getElementById("RemainingGuesses").innerHTML = guessesLeft;
     document.getElementById("Wins").innerHTML = winCounter;
 })
