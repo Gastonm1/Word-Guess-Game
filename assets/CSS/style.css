@@ -64,7 +64,7 @@ header {
     color: purple
 }
 
-#Wins{
+#Win-Box{
     border-left: 4px dotted black;
     width: 50%;
     display: table-cell;

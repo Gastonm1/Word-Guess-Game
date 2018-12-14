@@ -55,9 +55,10 @@ document.addEventListener("keydown", function (event) {
     if (randMovie.indexOf(userGuess) > -1) { // If the user guessed a correct letter
         for (var i = 0; i < randMovie.length; i++) { // For every letter in randMovie
             if (randMovie.charAt(i) === userGuess) { // If the user guessed one of the letters
-                underscore[i] = userGuess
+                //underscore[i] = userGuess
                 console.log(underscore);
-                rightLetter.push(underscore[i]);
+                rightLetter.push(userGuess)
+                underscore[randMovie.indexOf(userGuess)] = userGuess;
                 winCounter++;
                 winLose();
             }
